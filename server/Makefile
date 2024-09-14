@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -Wall -Wextra -g -std=c++17
+CXXFLAGS := -Wall -Wextra -g -std=c++17 -DCROW_USE_BOOST
 
 BINPATH := bin
 OBJPATH := $(BINPATH)/objs
@@ -8,6 +8,8 @@ INCPATH := -Iinclude/
 
 SOURCES := $(wildcard $(SRCPATH))
 OBJECTS := $(patsubst %.cpp, $(OBJPATH)/%.o, $(notdir $(SOURCES)))
+
+EXECUTABLE := $(BINPATH)/server
 
 $(EXECUTABLE): $(OBJECTS)
 	@mkdir -p $(BINPATH)
