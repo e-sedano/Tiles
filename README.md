@@ -22,3 +22,17 @@ Build server from source and run on port 18080
   $ make
   $ ./bin/server
 ```
+
+## Tasks
+
+| Completed | Language | Task                                                                               | Author |
+|:--------:|:--------:|:------------------------------------------------------------------------------------|:------:|
+|   [x]    | C++      | Create a simple REST API                                                            | Daniel |
+|   [ ]    | C++      | Write a function that returns all edges of a hexagon given the center point         |        |
+|   [ ]    | C++      | Write tests for all REST API endpoints                                              |        |
+|   [ ]    | Python   | Write a script to gather all visited cities given a list of lat. long. coordinates  |        |
+|   [ ]    | Docker   | Write a docker-compose file for client and server                                   |        |
+
+## Acknowledgements
+
+ - [Crow Framework](https://github.com/CrowCpp/Crow)
