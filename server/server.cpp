@@ -1,6 +1,6 @@
 #include "include/crow_all.h"
 
-int main(int argc, char* argv[]) {
+int main() {
     crow::SimpleApp api;
 
     /**
@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
      * @method GET
      * @description Returns "Hello World!".
      */
-    CROW_ROUTE(api, "/")([](){
+    CROW_ROUTE(api, "/api/")([](){
         return "Hello World!";
     });
 
@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
      * @param res The HTTP response object.
      * @description Returns information about a user based on the 'user' query parameter.
      */
-    CROW_ROUTE(api, "/user").methods(crow::HTTPMethod::GET, crow::HTTPMethod::PATCH)
+    CROW_ROUTE(api, "/api/user").methods(crow::HTTPMethod::GET)
     ([](const crow::request& req, crow::response& res) {
         // Return information about a user.
         const char* user = req.url_params.get("user");
