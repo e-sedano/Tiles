@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  tiles-client:
+    build: ./tiles
+    ports:
+      - 5173:5173
+    networks:
+      - tiles-network
+  tiles-server:
+    build: ./server
+    ports:
+      - 18080:18080
+    networks:
+      - tiles-network
+
+networks:
+  tiles-network:
+    driver: bridge

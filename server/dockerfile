@@ -1,0 +1,13 @@
+FROM alpine:3.20
+
+RUN apk --update add --no-cache build-base boost boost-dev
+
+WORKDIR /app
+
+COPY . /app
+
+RUN make
+
+EXPOSE 18080
+
+CMD [ "./bin/server" ]
