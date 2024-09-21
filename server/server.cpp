@@ -1,7 +1,14 @@
 #include "include/crow_all.h"
 
 int main() {
-    crow::SimpleApp api;
+    crow::App<crow::CORSHandler> api;
+
+    auto& cors = api.get_middleware<crow::CORSHandler>();
+    cors.global()
+        .headers("X-Custom-Header", "Upgrade-Insecure-Requests")
+        .methods("POST"_method, "GET"_method)
+        .prefix("/cors")
+        .origin("http://localhost:5173");
 
     /**
      * @route /
