@@ -8,7 +8,7 @@ function Layout() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <Outlet />  {/* Render the child component */}
     </>
   )
 }
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: '',
+        path: 'map',
         element: <Tiles />
       }
     ]
